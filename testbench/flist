@@ -41,3 +41,5 @@ $RV_ROOT/design/dmi/rvjtag_tap.sv
 -v $RV_ROOT/design/lib/mem_lib.sv
 -v $RV_ROOT/design/lib/ahb_to_axi4.sv
 -v $RV_ROOT/design/lib/axi4_to_ahb.sv
+$RV_ROOT/design/exu/red_test.v
+$RV_ROOT/design/exu/cl_add.v

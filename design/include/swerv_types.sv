@@ -290,6 +290,11 @@ typedef struct packed {
                        logic fence_i;
                        logic pm_alu;
                        logic legal;
+                       logic ffwidth;
+                       logic ffred;
+                       logic clmul;
+                       logic clmulh;
+                       logic clmulr;
                        } dec_pkt_t;
 
 
@@ -300,6 +305,11 @@ typedef struct packed {
                        logic low;
                        logic load_mul_rs1_bypass_e1;
                        logic load_mul_rs2_bypass_e1;
+                       logic clmul;
+                       logic clmulh;
+                       logic clmulr;
+                       logic ffwidth;
+                       logic ffred;
                        } mul_pkt_t;
 
 typedef struct packed {

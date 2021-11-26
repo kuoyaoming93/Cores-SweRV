@@ -116,6 +116,13 @@ divu =       [0000001..........101.....0110011]
 rem =        [0000001..........110.....0110011]
 remu =       [0000001..........111.....0110011]
 
+clmul     =  [0000101..........001.....0110011]
+clmulr    =  [0000101..........010.....0110011]
+clmulh    =  [0000101..........011.....0110011]
+
+ffwidth   =  [0000111..........000.....0110011]
+ffred   =    [0000111..........001.....0110011]
+
 
 .input
 
@@ -207,9 +214,21 @@ rv32i = {
       fence
       fence_i
       pm_alu
+      clmul
+      clmulh
+      clmulr
+      ffwidth
+      ffred
 }
 
 .decode
+
+rv32i[clmul]     =  { mul rs1 rs2 rd clmul}
+rv32i[clmulh]    =  { mul rs1 rs2 rd clmulh}
+rv32i[clmulr]    =  { mul rs1 rs2 rd clmulr}
+
+rv32i[ffwidth]   =  { mul rs1 rs2 rd ffwidth}
+rv32i[ffred]     =  { mul rs1 rs2 rd ffred}
 
 rv32i[mul]    = { mul rs1 rs2 rd low }
 rv32i[mulh]   = { mul rs1 rs2 rd rs1_sign rs2_sign }
